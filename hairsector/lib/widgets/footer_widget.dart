@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FooterWidget extends StatefulWidget {
+  const FooterWidget({super.key});
+
   @override
   _FooterWidgetState createState() => _FooterWidgetState();
 }

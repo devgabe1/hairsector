@@ -3,25 +3,29 @@ import '../widgets/footer_widget.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('App de Agendamento de Barbeiro'),
+        title: const Text('Hairsector'),
       ),
       body: const Center(
         child: Text(
@@ -29,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 24),
         ),
       ),
-      bottomNavigationBar: FooterWidget(), // Exibe o rodapé na tela inicial
+      bottomNavigationBar: const FooterWidget(), // Exibe o rodapé na tela inicial
     );
   }
 }
