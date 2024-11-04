@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/footer_widget.dart';
+import '../pages/home_page.dart'; // Certifique-se de ajustar o caminho se estiver em outra pasta
 
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: const HomeScreen(),
+      home: HomePage(),
     );
   }
 }
