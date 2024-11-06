@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Início"),
-        backgroundColor: Colors.black, // Personalize conforme necessário
+        backgroundColor: const Color.fromARGB(255, 21, 21, 21),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
