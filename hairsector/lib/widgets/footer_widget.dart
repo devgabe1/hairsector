@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../pages/home_page.dart';
+import '../pages/schedule_page.dart';
+import '../pages/profile_page.dart';
+import '../pages/settings_page.dart';
 
 class FooterWidget extends StatefulWidget {
   const FooterWidget({super.key});
@@ -12,12 +16,40 @@ class _FooterWidgetState extends State<FooterWidget> {
   // Variável para armazenar o índice do item selecionado
   int _selectedIndex = 0;
 
-  // Método para lidar com a mudança de índice
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index; // Atualiza o índice selecionado
-    });
+void _onItemTapped(int index) {
+  setState(() {
+    _selectedIndex = index;
+  });
+
+  // Navegação condicional com base no índice selecionado
+  switch (_selectedIndex) {
+    case 0:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()), // Tela Inicial
+      );
+      break;
+    case 1:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SchedulePage()), // Tela de Agenda
+      );
+      break;
+    case 2:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ProfilePage()), // Tela de Perfil
+      );
+      break;
+    case 3:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SettingsPage()), // Tela de Configurações
+      );
+      break;
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

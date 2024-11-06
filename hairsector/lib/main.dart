@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/footer_widget.dart';
-import '../pages/home_page.dart'; // Certifique-se de ajustar o caminho se estiver em outra pasta
-
+import '../pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -28,13 +27,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Hairsector'),
       ),
-      body: const Center(
-        child: Text(
-          'Bem-vindo!',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-      bottomNavigationBar: const FooterWidget(), // Exibe o rodapé na tela inicial
+      body: HomePage(), // Use HomePage aqui como o corpo
+      bottomNavigationBar: const FooterWidget(), // Rodapé global
     );
   }
 }
