@@ -104,7 +104,7 @@ class SuggestionsAndFavorites extends StatelessWidget {
       margin: const EdgeInsets.only(right: 10),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: const Color.fromARGB(255, 83, 83, 83),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
@@ -157,13 +157,13 @@ class OffersAndPromotions extends StatelessWidget {
         Container(
           height: 100,
           decoration: BoxDecoration(
-            color: Colors.orange[100],
+            color: const Color.fromARGB(255, 75, 75, 75),
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Center(
             child: const Text(
               "10% de desconto em corte de cabelo",
-              style: TextStyle(fontSize: 16, color: Colors.orangeAccent),
+              style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 234, 113)),
             ),
           ),
         ),
