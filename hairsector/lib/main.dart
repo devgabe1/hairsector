@@ -1,9 +1,11 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
 import '../widgets/footer_widget.dart';
 import '../pages/home_page.dart';
 import '../pages/schedule_page.dart';
 import '../pages/profile_page.dart';
 import '../pages/settings_page.dart';
+import '../pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +32,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  bool _isLoggedIn = false;
 
   // Lista de páginas para alternar no `IndexedStack`
   final List<Widget> _pages = [
@@ -38,6 +41,34 @@ class _HomeScreenState extends State<HomeScreen> {
     ProfilePage(),
     SettingsPage(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _showLoginPage(); // Exibe a tela de login ao iniciar
+  }
+
+  void _showLoginPage() {
+    if (!_isLoggedIn) {
+      Future.delayed(Duration.zero, () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            fullscreenDialog: true,
+            builder: (context) => LoginPage(
+              onLoginSuccess: _onLoginSuccess,
+            ),
+          ),
+        );
+      });
+    }
+  }
+
+  void _onLoginSuccess() {
+    setState(() {
+      _isLoggedIn = true;
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
